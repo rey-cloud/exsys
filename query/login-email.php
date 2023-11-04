@@ -2,6 +2,15 @@
 session_start();
 require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
 
+    if (isset($_SESSION['first']) || isset($_SESSION['last']) || isset($_SESSION['age']) || isset($_SESSION['pass-pin'])  || isset($_SESSION['security']) || isset($_SESSION['secret'])){
+      unset($_SESSION['first']);
+      unset($_SESSION['last']);
+      unset($_SESSION['age']);
+      unset($_SESSION['pass-pin']);
+      unset($_SESSION['security']);
+      unset($_SESSION['secret']);
+    } 
+
 if (isset($_POST['email'])) {
     function validate($data) {
         $data = trim($data);

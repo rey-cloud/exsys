@@ -1,6 +1,11 @@
 <?php
 session_start();
-require $_SERVER["DOCUMENT_ROOT"] . '/expertsystem-psychologist/config/database.php';
+require $_SERVER["DOCUMENT_ROOT"] . '/expert_system/config/database.php';
+
+if (isset($_POST['forgot-pass'])) {
+    header("Location: ../index.php?forgot-pass=true");
+    exit();
+}
 
 if (isset($_GET['quest'])){
     $_SESSION['another-question'] = $_GET['quest'];

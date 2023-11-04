@@ -5,3 +5,49 @@
 .display-none {
   @apply hidden;
 }
+
+.notification {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 9999;
+}
+
+.success {
+  background-color: #25d72b;
+  color: white;
+  border: solid 2px #18ae1d;
+}
+
+/* Add this CSS to style the scrollbar with the same border radius as the form */
+.modal {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+.modal::-webkit-scrollbar {
+  width: 7px;
+  /* Adjust to change scrollbar width */
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color of the thumb (dragging part) */
+  border-radius: 5rem;
+  /* Set the same border radius as the form */
+}
+
+.modal::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  /* Color of the track (background) */
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  /* Set the same border radius as the form */
+}

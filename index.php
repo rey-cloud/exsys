@@ -54,10 +54,10 @@
   <script src="js/dark-mode.js"></script>
   
   <?php 
-  if(isset($_POST['take-test']) || isset($_GET['error']) || isset($_GET['close-exist']) ) {
+  if(isset($_POST['take-test']) || isset($_GET['error']) || isset($_GET['close-exist']) || isset($_POST['cancel-new-user'])) {
     include("php_tabs/includes/login.php");
   }
-  if (isset($_GET['new-user']) || isset($_GET['error-pin']) || isset($_GET['error-first']) || isset($_GET['error-last']) || isset($_GET['error-age'])) {
+  if (isset($_GET['new-user']) || isset($_GET['error-pin']) || isset($_GET['error-first']) || isset($_GET['error-last']) || isset($_GET['error-age']) || isset($_GET['error-security']) || isset($_GET['error-secret'])) {
     include("php_tabs/includes/new-email.php");
   }
   if (isset($_GET['instruction'])) {
@@ -68,9 +68,17 @@
     include('php_tabs/includes/existing-user.php');
   }
 
-  if (isset($_GET['view-result']) || isset($_GET['quest']) || isset($_GET['pin-error'])) {
+  if (isset($_GET['view-result']) || isset($_GET['quest']) || isset($_GET['pin-error']) || isset($_POST['close-forgot'])) {
+    if (isset($_GET['quest'])){
+      $_SESSION['another-question'] = $_GET['quest'];
+    }
     include('php_tabs/includes/pin.php');
   }
+
+  if (isset($_GET['forgot-pass']) || isset($_GET['forgot-error'])) {
+    include('php_tabs/includes/forgot-pass-modal.php');
+  }
+
   ?>
 
 </body>
